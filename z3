@@ -1,105 +1,158 @@
-local _ = loadstring(game:HttpGet(('https://sirius.menu/rayfield')))()
-local __ = _:CreateWindow({
-    Name = "\80\104\105\108\108\121\32\83\116\114\101\101\116\122\32\50\32\66\121\32\68\97\104\32\80\108\117\103",
-    Icon = 0,
-    LoadingTitle = "\80\104\105\108\108\121\32\83\116\114\101\101\116\122\32\50",
-    LoadingSubtitle = "\98\121\32\68\97\104\32\80\108\117\103",
-    ShowText = "\68\97\104\32\80\108\117\103",
-    Theme = "\83\101\114\101\110\105\116\121",
-    ToggleUIKeybind = "\80",
-    DisableRayfieldPrompts = false,
-    DisableBuildWarnings = false,
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = nil,
-        FileName = "\68\97\104\80\108\117\103"
-    },
-    Discord = {
-        Enabled = true,
-        Invite = "\56\68\121\56\89\56\102\90\98\74",
-        RememberJoins = true
-    },
-    KeySystem = true,
-    KeySettings = {
-        Title = "\80\36\50\32\68\97\104\32\80\108\117\103",
-        Subtitle = "\75\101\121\32\83\121\115\116\101\109",
-        Note = "\67\104\101\99\107\32\66\111\111\115\116\101\114\115\32\67\104\97\110\110\101\108\32\70\111\114\32\75\101\121",
-        FileName = "\68\97\104\80\108\117\103",
-        SaveKey = true,
-        GrabKeyFromSite = false,
-        Key = { "\68\80\71" }
-    }
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Philly Streetz 2 By Dah Plug",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Philly Streetz 2",
+   LoadingSubtitle = "by Dah Plug",
+   ShowText = "Dah Plug", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Serenity", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "P", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Dah Plug"
+   },
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "https://discord.gg/8Dy8Y8fZbJ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "P$2 Dah Plug",
+      Subtitle = "Key System",
+      Note = "Check Boosters Channel For Key", -- Use this to tell the user how to get a key
+      FileName = "DahPlug", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"DPG"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
 })
 
-local function ___(t, i)
-    return __:CreateTab(t, i):CreateSection(t)
-end
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Main")
+Section:Set("Main")
 
-local a, b = ___("Main", 4483362458), ___("Convo", 4483362458)
+local Tab1 = Window:CreateTab("Convo", 4483362458) -- Title, Image
+local Section1 = Tab1:CreateSection("NPC Convo")
+Section1:Set("Convo")
 
-a:Set("Main")
-b:Set("Convo")
+local Button = Tab:CreateButton({
+   Name = "AC BYPASS",
+   Callback = function()
+   Rayfield:Notify({
+   Title = "Anti Cheat",
+   Content = "BYPASSED",
+   Duration = 6.5,
+   Image = 4483362458,
+})
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))() 
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z"))() 
 
-local function ƒ(n, f)
-    return a:CreateButton({ Name = n, Callback = f })
-end
+   -- The function that takes place when the button is pressed
+   end,
+})
 
-local function ɸ(n, f)
-    return b:CreateButton({ Name = n, Callback = f })
-end
+local Button = Tab:CreateButton({
+   Name = "Click TP (Left Alt)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z1"))() 
+   -- The function that takes place when the button is pressed
+   end,
+})
 
-ƒ("\65\67\32\66\89\80\65\83\83", function()
-    _:Notify({
-        Title = "\65\110\116\105\32\67\104\101\97\116",
-        Content = "\66\89\80\65\83\83\69\68",
-        Duration = 6.5,
-        Image = 4483362458
-    })
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z"))()
+local Button = Tab:CreateButton({
+   Name = "Instant Respawn",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z2"))()
+   Rayfield:Notify({
+   Title = "Instant Respawn",
+   Content = "Activated",
+   Duration = 6.5,
+   Image = 4483362458,
+})
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "GUAPO",
+   Callback = function()
+   local ohString1 = "lilGuapo"
+local ohBoolean2 = true
+
+game:GetService("ReplicatedStorage").convoFunction:FireServer(ohString1, ohBoolean2) 
+
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "Clinic",
+   Callback = function()
+  local args = {
+    [1] = "clinic",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "IceBlox",
+   Callback = function()
+   local args = {
+    [1] = "iceblox",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack(args))
+
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "Gas Station",
+   Callback = function()
+  local args = {
+    [1] = "gasStation",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack(args))
+
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "INF Stamina",
+   Callback = function()
+  local a1 = getrawmetatable(game)
+setreadonly(a1, false)
+
+local b2 = a1[string.char(95, 95, 110, 97, 109, 101, 99, 97, 108, 108)]
+
+a1[string.char(95, 95, 110, 97, 109, 101, 99, 97, 108, 108)] = newcclosure(function(c3, ...)
+    local d4 = getnamecallmethod()
+    local e5 = {...}
+
+    local f6 = string.char(70,105,114,101,83,101,114,118,101,114)
+    local g7 = string.char(69,110,101,114,103,121)
+    local h8 = string.char(66,108,111,99,107,101,100,32,97,116,116,101,109,112,116,32,116,111,32,70,105,114,101,83,101,114,118,101,114,32,111,110,32,69,110,101,114,103,121,32,119,105,116,104,32,116,114,117,101)
+
+    if d4 == f6 and tostring(c3) == g7 and e5[1] == true then
+        warn(h8)
+        return
+    end
+
+    return b2(c3, unpack(e5))
 end)
-
-ƒ("\67\108\105\99\107\32\84\80\32\40\76\101\102\116\32\65\108\116\41", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z1"))()
-end)
-
-ƒ("\73\110\115\116\97\110\116\32\82\101\115\112\97\119\110", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Doloo35x/acb/refs/heads/main/z2"))()
-    _:Notify({
-        Title = "Instant Respawn",
-        Content = "Activated",
-        Duration = 6.5,
-        Image = 4483362458,
-    })
-end)
-
-ɸ("GUAPO", function()
-    game:GetService("ReplicatedStorage").convoFunction:FireServer("lilGuapo", true)
-end)
-
-ɸ("Clinic", function()
-    game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack({ "clinic", true }))
-end)
-
-ɸ("IceBlox", function()
-    game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack({ "iceblox", true }))
-end)
-
-ɸ("Gas Station", function()
-    game:GetService("ReplicatedStorage"):WaitForChild("convoFunction"):FireServer(unpack({ "gasStation", true }))
-end)
-
-ƒ("INF Stamina", function()
-    local 𝔞 = getrawmetatable(game)
-    setreadonly(𝔞, false)
-    local 𝔟 = 𝔞[string.char(95, 95, 110, 97, 109, 101, 99, 97, 108, 108)]
-    𝔞[string.char(95, 95, 110, 97, 109, 101, 99, 97, 108, 108)] = newcclosure(function(𝔠, ...)
-        local 𝔡 = getnamecallmethod()
-        local 𝔢 = { ... }
-        if 𝔡 == "FireServer" and tostring(𝔠) == "Energy" and 𝔢[1] == true then
-            warn("Blocked attempt to FireServer on Energy with true")
-            return
-        end
-        return 𝔟(𝔠, unpack(𝔢))
-    end)
-end)
+   end,
+})
